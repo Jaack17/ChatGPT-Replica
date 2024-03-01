@@ -88,9 +88,9 @@ def login():
         user = cursor.fetchone()
 
         if user and check_password_hash(user[2], password):
-            session["id"] = user[0]  # Remember the user's ID in the session
-            session["logged_in"] = True  # Set the logged_in session variable to True
-            return redirect("/chat")  # Redirect to the chat page after successful login
+            session["id"] = user[0]
+            session["logged_in"] = True
+            return redirect("/chat")
         else:
             flash("Invalid username or password", "error")
 
@@ -109,12 +109,9 @@ def logout():
 @app.route("/change_password", methods=["POST"])
 @login_required
 def change_password():
-    # Logica per cambiare la password
     
-    # Invalida la sessione corrente
     session.clear()
     
-    # Reindirizza l'utente alla pagina di login
     return redirect("/login")
 
 # Route for handling user registration
@@ -152,42 +149,32 @@ def register():
 @login_required
 def profile():
     if request.method == "POST":
-        # Ottieni l'ID dell'utente dalla sessione
         user_id = session.get("id")
 
-        # Ottieni la password corrente e la nuova password dal form
         current_password = request.form.get("current_password")
         new_password = request.form.get("new_password")
 
-        # Query per ottenere la password corrente dell'utente dal database
         cursor = g.db.cursor()
         cursor.execute("SELECT password FROM registrations WHERE id = ?", (user_id,))
         user = cursor.fetchone()
 
-        # Verifica se la password corrente è corretta
         if user and check_password_hash(user[0], current_password):
-            # Hash della nuova password
             hashed_new_password = generate_password_hash(new_password)
 
-            # Aggiorna la password dell'utente nel database
             cursor.execute("UPDATE registrations SET password = ? WHERE id = ?", (hashed_new_password, user_id))
             g.db.commit()
 
-            # Invalida la sessione corrente
             session.clear()
 
-            # Imposta un messaggio flash di successo
             flash("Password successfully changed!", "success")
 
-            # Reindirizza l'utente alla pagina di login
             return redirect("/login")
         else:
-            # Password corrente non corretta, mostra un messaggio di errore
             flash("Current password is incorrect", "error")
 
-    # Rendering della pagina di gestione del profilo
     return render_template("profile.html")
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+
