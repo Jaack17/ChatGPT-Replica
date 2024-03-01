@@ -1,6 +1,6 @@
-## Project Name
+## ChatGPT Replica
 
-ChatGPT Replica
+#### Video Demo:  <URL HERE>
 
 ## Description
 
@@ -30,7 +30,7 @@ This project is a web-based chatbot application built with Flask and OpenAI. The
 4. Set the OpenAI API key as an environment variable:
 
    ```bash
-   export OPENAI_API_KEY=tua_chiave_api
+   export OPENAI_API_KEY=your_api_key
    ```
 
 5. Run the application:
@@ -55,7 +55,7 @@ After starting the application, visit http://localhost:5000 in your browser to a
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the[MIT License](LICENSE.md) - see the [LICENSE](LICENSE.md) file for details.
 
 ## Contacts
 
