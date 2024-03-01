@@ -55,7 +55,7 @@ After starting the application, visit http://localhost:5000 in your browser to a
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contacts
 
