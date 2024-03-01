@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login to ChatGPT
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5 text-center">Login to ChatGPT</h1>
+    <div class="position-absolute top-0 start-0 m-3">
+        <a href="/" class="btn btn-primary">Home</a> <!-- Pulsante per tornare alla homepage -->
+    </div>
+    <form action="/login" method="POST" class="mt-4">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary login-button">Login</button>
+    </form>
+{% endblock %}
+

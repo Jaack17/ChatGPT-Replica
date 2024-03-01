@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    ChatGPT
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5 text-center">ChatGPT</h1>
+    <div class="position-absolute top-0 start-0 m-3">
+        <a href="/" class="btn btn-primary">Home</a>
+    </div>
+    <div class="position-absolute top-0 end-0 m-3">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Account
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/profile">Manage Password</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <form action="/logout" method="POST">
+                        <button type="submit" class="dropdown-item">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="messages" class="mb-3">
+    </div>
+    <div class="input-container">
+        <input type="text" id="user-input" class="form-control" placeholder="Ask ChatGPT...">
+        <button id="send-btn" class="btn btn-primary">Send</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/static/script.js"></script>
+{% endblock %}
+
+
+
+
+
+
