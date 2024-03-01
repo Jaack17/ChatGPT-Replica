@@ -59,4 +59,4 @@ MIT
 
 ## Contacts
 
-Il tuo nome
+Giacomo Innocenti
