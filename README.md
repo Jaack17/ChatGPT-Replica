@@ -4,7 +4,11 @@
 
 ## Description
 
-This project is a web-based chatbot application built with Flask and OpenAI. The application allows users to register, log in, and chat with a bot based on OpenAI.
+This project is a web chatbot application built using Flask and OpenAI. The application allows users to register, log in, and chat with a bot based on OpenAI. It utilizes a REST API-based architecture to handle user requests and generate real-time bot responses.
+
+The application is structured in a modular way, with various source files handling the core functionalities of the application. The `app.py` file serves as the main entry point of the application, handling application routes, authentication logic, and interaction with the OpenAI bot. The `utility.py` file contains auxiliary functions used in the application, while `script.js` and `style.css` manage the appearance and interaction of the chatbot's user interface.
+
+The project is designed to be easily extendable and customizable.
 
 ## Installation
 
